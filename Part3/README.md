@@ -20,15 +20,14 @@ When answering the questions, remember to use all the resources at your disposal
  > *It depends on the problem we are solving.For some problems it is essential to use concurrency,even if it complicates the work it makes the problem solvable.*
  
  ### What are the differences between processes, threads, green threads, and coroutines?
- > * -Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.*
- > * -Green threads are "user-level threads". They are scheduled by an "ordinary" user-level process, not by the kernel. So they can be used to simulate multi-threading on platforms that don't provide that capability.
-
- > * -Coroutines are a form of sequential processing: only one is executing at any given time.*
+ > *-Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.*
+ > *-Green threads are "user-level threads". They are scheduled by an "ordinary" user-level process, not by the kernel. So they can be used to simulate multi-threading on platforms that don't provide that capability.
+ > *-Coroutines are a form of sequential processing: only one is executing at any given time.*
  
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
- > * -The `pthread_create()` function starts a new thread in the calling process.*
- > * -`threading.Thread()` is the constructor of the class Thread.*
- > * -The `go` is placed beforea function call to call it like a gorutine. A goroutine is a lightweight thread managed by the Go runtime.*
+ > *-The `pthread_create()` function starts a new thread in the calling process.*
+ > *-`threading.Thread()` is the constructor of the class Thread.*
+ > *-The `go` is placed beforea function call to call it like a gorutine. A goroutine is a lightweight thread managed by the Go runtime.*
  
  ### How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
  > *The Python Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter.
