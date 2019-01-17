@@ -20,22 +20,22 @@ When answering the questions, remember to use all the resources at your disposal
  > *It depends on the problem we are solving.For some problems it is essential to use concurrency,even if it complicates the work it makes the problem solvable.*
  
  ### What are the differences between processes, threads, green threads, and coroutines?
- > *-Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.
- 	-Green threads are "user-level threads". They are scheduled by an "ordinary" user-level process, not by the kernel. So they can be used to simulate multi-threading on platforms that don't provide that capability.
+ > * -Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.*
+ 	* -Green threads are "user-level threads". They are scheduled by an "ordinary" user-level process, not by the kernel. So they can be used to simulate multi-threading on platforms that don't provide that capability.
 
- 	-Coroutines are a form of sequential processing: only one is executing at any given time.*
+ 	* -Coroutines are a form of sequential processing: only one is executing at any given time.*
  
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
- > *-The `pthread_create()` function starts a new thread in the calling process.
- 	-`threading.Thread()` is the constructor of the class Thread
- 	-The `go` is placed beforea function call to call it like a gorutine. A goroutine is a lightweight thread managed by the Go runtime.*
+ > * -The `pthread_create()` function starts a new thread in the calling process.*
+ 	* -`threading.Thread()` is the constructor of the class Thread.*
+ 	* -The `go` is placed beforea function call to call it like a gorutine. A goroutine is a lightweight thread managed by the Go runtime.*
  
  ### How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
  > *The Python Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter.
  This means that only one thread can be in a state of execution at any point in time. The impact of the GIL isn’t visible to developers who execute single-threaded programs, but it can be a performance bottleneck in CPU-bound and multi-threaded code.Since the GIL allows only one thread to execute at a time even in a multi-threaded architecture with more than one CPU core, the GIL has gained a reputation as an “infamous” feature of Python.*
  
  ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
- > * The most popular way is to use a multi-processing approach where you use multiple processes instead of threads. Each Python process gets its own Python interpreter and memory space so the GIL won’t be a problem. Python has a multiprocessing module which lets us create processes easily.*
+ > *The most popular way is to use a multi-processing approach where you use multiple processes instead of threads. Each Python process gets its own Python interpreter and memory space so the GIL won’t be a problem. Python has a multiprocessing module which lets us create processes easily.*
  
  ### What does `func GOMAXPROCS(n int) int` change? 
  > *GOMAXPROCS sets the maximum number of CPUs that can be executing simultaneously and returns the previous setting. If n < 1, it does not change the current setting. The number of logical CPUs on the local machine can be queried with NumCPU.*
