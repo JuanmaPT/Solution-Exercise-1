@@ -2,6 +2,7 @@
 # python fo.py
 
 from threading import Thread
+import time
 
 
 # Potentially useful thing:
@@ -12,20 +13,28 @@ i = 0
 def incrementingFunction():
     global i
     # TODO: increment i 1_000_000 times
+    for a in range(1,1000000):
+        i = i + 1
 
 def decrementingFunction():
     global i
     # TODO: decrement i 1_000_000 times
-
+    for a in range(1,1000000):
+        i = i - 1
 
 
 def main():
     # TODO: Something is missing here (needed to print i)
+    global i
 
     incrementing = Thread(target = incrementingFunction, args = (),)
     decrementing = Thread(target = decrementingFunction, args = (),)
     
     # TODO: Start both threads
+    incrementing.start()
+    #time.sleep(1) 
+    decrementing.start()
+    
     
     incrementing.join()
     decrementing.join()
